@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <header>Currency Converter</header>
+  <form action="#">
+    <p>Enter Amount</p>
+    <div class="amount">
+      <input (input)="onInputTo()" [(ngModel)]="to" name="something2" type="text">
+      <input (input)="onInputFrom()" [(ngModel)]="from" name="something" type="text">
+    </div>
+    <div class="drop-list">
+      <div class="from">
+        <p>From</p>
+          <select #c1  class="select-box" name="country1" id="country1" (click)="changeCountry1(c1.value)">
+            <option *ngFor="let country of countries" [value]="country.value">{{country.viewValue}}</option>
+          </select>
+      </div>
+      <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+      <div class="to">
+        <p>To</p>
+          <select #c2 class="select-box" name="country2" id="country2" (click)="changeCountry2(c2.value)">
+            <option *ngFor="let country of countries" selected="selected" [value]="country.value">{{country.viewValue}}</option>
+          </select>
+      </div>
+    </div>
+    <div class="exchange-rate">Getting exchange rate...</div>
+    <button (click)="convert()">Get Exchange Rate</button>
+  </form>
+</div>
