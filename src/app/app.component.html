@@ -1,5 +1,11 @@
+<div>
+  <header>
+    <marquee width="1000px" behavior="alternate" direction="left" bgcolor="#ffcc00">
+     <span class="head"> EUR: {{euro.toFixed(3)}} </span> <span class="head">USD: {{dollar.toFixed(3)}}</span>  <span>Today`s date: {{date}}</span>
+    </marquee>
+  </header>
 <div class="wrapper">
-  <header>Currency Converter</header>
+<p class="padd">Currency Converter</p>
   <form action="#">
     <p>Enter Amount</p>
     <div class="amount">
@@ -24,4 +30,5 @@
     <div class="exchange-rate">Getting exchange rate...</div>
     <button (click)="convert()">Get Exchange Rate</button>
   </form>
+</div>
 </div>
