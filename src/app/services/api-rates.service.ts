@@ -27,7 +27,6 @@ export class ApiRatesService {
     this.startLoading()
     let url = `https://api.exchangerate.host/convert?from=${country1}&to=${country2}&amount=${amount}`
     return this.http.get<APIRateType>(url).pipe(
-      delay(200),
       retry(2),
       tap(cache => this.cache = cache),
     catchError(this.errorHandler.bind(this))
