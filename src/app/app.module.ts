@@ -7,12 +7,14 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './components/header/header.component';
 import { ConverterComponent } from './components/converter/converter.component';
+import { LoadingComponent } from './components/converter/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ConverterComponent,
+    LoadingComponent,
   ],
     imports: [
         BrowserModule,

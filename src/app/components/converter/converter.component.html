@@ -21,7 +21,7 @@
         </select>
       </div>
     </div>
-    <div class="exchange-rate">Getting exchange rate...</div>
-    <button (click)="convert()">Get Exchange Rate</button>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <button style="margin-top: 20px" (click)="convert()">Get Exchange Rate</button>
   </form>
 </div>
