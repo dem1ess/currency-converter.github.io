@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { tap, catchError, delay, retry} from 'rxjs/operators';
+import { tap, catchError, retry} from 'rxjs/operators';
 import {Observable, Subject, throwError} from "rxjs";
 import {ErrorService} from "./error.service";
 import {APIRateType} from "../models/APIRateType";
@@ -33,6 +33,7 @@ export class ApiRatesService {
     )
 }
   private errorHandler(error: HttpErrorResponse) {
+    this.stopLoading()
     this.errorService.handle(error.message)
     return throwError(() => error.message)
   }
